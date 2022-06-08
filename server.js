@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 8080;
 app.use(morgan("tiny"));
 app.use(bodyparser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+app.use('/html', express.static(path.resolve(__dirname, 'public/html')));
 app.use('/css', express.static(path.resolve(__dirname, "public/css")));
 app.use('/img', express.static(path.resolve(__dirname, "public/img")));
 app.use('/js', express.static(path.resolve(__dirname, 'public/js')));
