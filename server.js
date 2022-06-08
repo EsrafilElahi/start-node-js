@@ -16,9 +16,7 @@ app.use('/img', express.static(path.resolve(__dirname, "public/img")));
 app.use('/js', express.static(path.resolve(__dirname, 'public/js')));
 
 
-app.get("/", (req, res) => {
-  res.send("Home CRUD Practice");
-})
+app.get("/", require("./routes/router"))
 
 app.listen(PORT, () => console.log(`server running on port : ${PORT}`))
 
